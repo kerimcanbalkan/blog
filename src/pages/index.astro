@@ -1,18 +1,9 @@
 ---
 import '../../base.css'
-import Navbar from '../components/Navbar'
+import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-    <Navbar />
-		<h1 class="text-5xl">Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<p class="text-3xl text-light-color-accent dark:text-dark-color-accent py-4">Test</p>
+	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus aliquid laborum quis quasi, cumque porro consequuntur labore, velit veritatis voluptatum culpa quibusdam ex earum enim consectetur excepturi nihil doloremque ducimus repellat ullam, eos aperiam illo est nesciunt? Quasi, voluptas animi odit debitis similique fugit praesentium recusandae aliquid omnis ratione dolore!</p>
+</BaseLayout>
