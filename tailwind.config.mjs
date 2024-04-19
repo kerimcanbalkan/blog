@@ -9,9 +9,10 @@ export default {
     extend: {
       colors: {
         light: {
-          "color-fill": "#FAFCFC",
-          "color-text-base": "#222E36",
-          "color-accent": "#D3006A",
+          // "color-fill": "#FAFCFC",
+          "color-fill": "#F2F5EC",
+          "color-text-base": "#353538",
+          "color-accent": "#75AADB",
           "color-card": "#EACEDB",
           "color-card-muted": "#F1BAD4",
           "color-border": "#E3A9C6",
@@ -19,7 +20,7 @@ export default {
         dark: {
           "color-fill": "#353641",
           "color-text-base": "#E9EDF1",
-          "color-accent": "#FF78C8",
+          "color-accent": "#75AADB",
           "color-card": "#4B4C59",
           "color-card-muted": "#715566",
           "color-border": "#86436B",
