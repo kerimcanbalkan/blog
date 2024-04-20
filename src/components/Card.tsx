@@ -8,7 +8,7 @@ export interface Props {
 }
 
 function Card({ href, frontmatter }: Props) {
-        const { title, pubDatetime, modDatetime, description } = frontmatter;
+        const { title, pubDatetime, description } = frontmatter;
 
         const headerProps = {
                 style: { viewTransitionName: slugifyStr(title) },
@@ -20,7 +20,7 @@ function Card({ href, frontmatter }: Props) {
                         <a href={href} className="inline-block text-lg font-medium">
                                 <h3{...headerProps}>{title}</h3>
                         </a>
-                        <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+                        <Datetime pubDatetime={pubDatetime} />
                         <p>{description}</p>
                 </li>
         )

@@ -12,7 +12,7 @@ console.log(posts)
 	<ul>
 		{
 		posts.map(({ data, slug }) => (
-			<Card href={`/posts/${slug}/`} frontmatter={data} />
+			<Card href={`/${slug}/`} frontmatter={data} />
 		))
 		}
 	</ul>

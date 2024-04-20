@@ -1,15 +1,8 @@
 ---
-author: Sat Naing
+author: Kerimcan Balkan
 pubDatetime: 2022-09-25T15:20:35Z
-title: Customizing AstroPaper theme color schemes
-featured: false
-draft: false
-tags:
-  - color-schemes
-  - docs
-description:
-  How you can enable/disable light & dark mode; and customize color schemes
-  of AstroPaper theme.
+title: Askimi cok sevdigim icin ona blog yaziyorum
+description: Askimlan gecen hafta italyada cok gezdik cok guzeldi askimi cok ama cok ama cok seviyorum
 ---
 
 This post will explain how you can enable/disable light & dark mode for the website. Moreover, you'll learn how you can customize color schemes of the entire website.
