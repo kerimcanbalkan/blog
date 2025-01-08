@@ -1,0 +1,21 @@
+---
+import '../../base.css'
+import Header from '../components/Header'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+	</head>
+	<body class="font-display mx-auto max-w-2xl px-5 py-12 bg-light-color-fill text-light-color-text-base dark:bg-dark-color-fill dark:text-dark-color-text-base">
+		<Header/>
+		<slot/>
+	</body>
+</html>
+
+

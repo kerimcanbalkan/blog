@@ -1,0 +1,91 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+import type { CollectionEntry} from "astro:content"
+import {slugifyStr} from "../utils/slugify"
+import Datetime from "../components/DateTime"
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const {post} = Astro.props;
+
+const {
+  title,
+  pubDatetime,
+} = post.data;
+
+const { Content } = await post.render();
+
+---
+
+<BaseLayout>
+  <button
+    class="flex hover:opacity-75 pb-3"
+    onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"
+    >
+    <span>{"<- Go Back"}</span>
+  </button>
+  <main id="main-content">
+    <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
+    <Datetime
+      pubDatetime={pubDatetime}
+      size="sm"
+      className="my-2"
+    />
+    <article id="article" role="article" class="prose dark:prose-invert mx-auto mt-8">
+      <Content />
+    </article>
+  </main>
+</BaseLayout>
+
+
+<style>
+main {
+  @apply pb-16;
+}
+.post-title {
+  @apply text-2xl font-semibold text-light-color-accent dark:text-dark-color-accent;
+}
+</style>
+
+<script is:inline>
+/** Create a progress indicator
+   *  at the top */
+function createProgressBar() {
+  // Create the main container div
+  const progressContainer = document.createElement("div");
+  progressContainer.className =
+    "fixed top-0 right-0  z-10 h-1 w-full bg-light-color-fill dark:bg-dark-color-fill";
+
+  // Create the progress bar div
+  const progressBar = document.createElement("div");
+  progressBar.className = "progress-bar h-1 w-0 bg-light-color-accent";
+  progressBar.id = "myBar";
+
+  // Append the progress bar to the progress container
+  progressContainer.appendChild(progressBar);
+
+  // Append the progress container to the document body or any other desired parent element
+  document.body.appendChild(progressContainer);
+}
+createProgressBar();
+
+/** Update the progress bar
+   *  when user scrolls */
+function updateScrollProgress() {
+  const winScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  const height =
+    document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  if (document) {
+    const myBar = document.getElementById("myBar");
+    if (myBar) {
+      myBar.style.width = scrolled + "%";
+    }
+  }
+}
+document.addEventListener("scroll", updateScrollProgress);
+</script>
